@@ -41,8 +41,8 @@ const App = () => {
               {currentUser ? "LogOut" : "Login"}
             </Nav.Link>
             {currentUser ? (
-              <Nav.Link href={"/profile"} className="nav-link">
-                {currentUser.username}
+              <Nav.Link disabled>
+                {currentUser? 'Logged as: '+currentUser.name:null}
               </Nav.Link>
             ) : (
               <Nav.Link href={"/register"} className="nav-link">
@@ -51,6 +51,7 @@ const App = () => {
             )}
           </Nav>
         </Navbar.Collapse>
+        
         </Container>
       </Navbar>
       <Container fluid className>
